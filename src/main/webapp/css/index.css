@@ -1,0 +1,52 @@
+body
+{
+	height: 700px;
+	display: flex;
+	flex-flow: column;
+}
+.top
+{
+	height: 19.5%;
+	width:100%;
+	background-image: url("image/top.png");
+}
+.imga
+{
+	width: 100%;
+	height: 100%;
+}
+.bottom
+{
+	height: 79%;
+}
+.list
+{
+	width: 20%;
+	height: 100%;
+	float: left;
+	border: none;
+	background-color: #0effd9;
+}
+.txt
+{
+	margin-top: 0px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+.page
+{
+	width: 60%;
+	height: 100%;
+	float: none;
+	border: none;
+	background-color: #ffff80;
+}
+.infor
+{
+	width: 20%;
+	height: 100%;
+	float: right;
+	border: none;
+	background-color: #00ffff;
+}
