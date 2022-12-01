@@ -20,5 +20,13 @@ public class SVBO
 	{
 		svDAO.DelSV(id);
 	}
-	
+	public void Update(SV sv)
+	{
+		svDAO.UpdateSV(sv);
+	}
+	public SV SearchSV(String factor,String nfactor)
+	{
+		return svDAO.SearchSV(factor, nfactor);
+	}
+
 }

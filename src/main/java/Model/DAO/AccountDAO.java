@@ -78,4 +78,62 @@ public class AccountDAO
 		
 		return list_account;
 	}
+	public int Num_GV()
+	{
+		int dem=0;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="select count(*) from account where type='admin'";
+			ResultSet rs=stmt.executeQuery(sql);
+			while(rs.next()) 
+			{
+				dem=rs.getInt(1);
+			}
+		}
+		catch (Exception e) 
+		{
+			System.out.print(e);
+		}
+		return dem;
+	}
+	public int Num_SV()
+	{
+		int dem=0;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="select count(*) from account where type='user'";
+			ResultSet rs=stmt.executeQuery(sql);
+			while(rs.next()) 
+			{
+				dem=rs.getInt(1);
+			}
+		}
+		catch (Exception e) 
+		{
+			System.out.print(e);
+		}
+		return dem;
+	}
+	
+	public void Add(Account account)
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="insert into account values ('"+account.getid()+"','"+account.getusername()+"','"+account.getpassword()+"','"+account.gettype()+"')";
+			stmt.executeUpdate(sql);
+			
+		}catch (Exception e) 
+		{
+			System.out.print(e);
+		}
+	}
 }

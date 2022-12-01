@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet
 			destination = "/WebContent/Welcome.jsp";
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 			rd.forward(request, response);
+			
 		}
 		else
 		{    

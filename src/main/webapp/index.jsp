@@ -12,6 +12,9 @@
 				<input type="submit" value="Login">
 			</form>
 			<a href="WebContent/logout.jsp" target="page">Logout</a>
+			<form action="Register" method="post" target="page">
+				<input type="submit" value="Register">
+			</form>
 		</div>
 		<div class="bottom">
 		<%if (session.getAttribute("username")!=null){ %>

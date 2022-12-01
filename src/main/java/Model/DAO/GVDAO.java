@@ -59,5 +59,19 @@ public class GVDAO
 		}
 		return gv;
 	}
-
+	public void Add(GV gv)
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="insert into gv values ('"+gv.getid()+"','"+gv.getname()+"','"+gv.getage()+"','"+gv.getlesson()+"')";
+			stmt.executeUpdate(sql);
+		}
+		catch (Exception e)
+		{	
+			System.out.print(e);
+		}
+	}
 }
