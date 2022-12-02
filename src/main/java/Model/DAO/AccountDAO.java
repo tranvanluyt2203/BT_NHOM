@@ -120,7 +120,6 @@ public class AccountDAO
 		}
 		return dem;
 	}
-	
 	public void Add(Account account)
 	{
 		try
@@ -135,5 +134,26 @@ public class AccountDAO
 		{
 			System.out.print(e);
 		}
+	}
+	public String GetidByUsername(String username)
+	{
+		String id=null;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="select * from account where username='"+username+"'";
+			ResultSet rs=stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				id=rs.getString(1);
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		return id;
 	}
 }

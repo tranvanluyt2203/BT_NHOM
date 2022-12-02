@@ -29,5 +29,8 @@ public class AccountBO
 		
 		accountDAO.Add(account);
 	}
-	
+	public String GetidByUsername(String username)
+	{
+		return accountDAO.GetidByUsername(username);
+	}
 }
