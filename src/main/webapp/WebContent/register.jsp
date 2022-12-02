@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<form action="Register" method="post" >
-			<input type="text" name="usernamer">
-			<input type="text" name="passwordr">
+			Username : <input type="text" name="usernamer">
+			Password : <input type="text" name="passwordr">
 			<p>
 			<label for="admin">Admin</label>
 			<input type="radio" name="type" id="admin" value="admin">

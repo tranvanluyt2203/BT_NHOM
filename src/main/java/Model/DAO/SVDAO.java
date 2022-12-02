@@ -150,7 +150,7 @@ public class SVDAO
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
 			Statement stmt=con.createStatement();
-			String sql="insert into gv values ('"+sv.getid()+"','"+sv.getname()+"','"+sv.getage()+"','"+sv.getidgv()+"','"+sv.getdiem()+"')";
+			String sql="insert into sv values ('"+sv.getid()+"','"+sv.getname()+"','"+sv.getage()+"','"+sv.getidgv()+"','"+sv.getdiem()+"')";
 			stmt.executeUpdate(sql);
 		}
 		catch (Exception e)

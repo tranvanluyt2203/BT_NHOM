@@ -28,5 +28,9 @@ public class SVBO
 	{
 		return svDAO.SearchSV(factor, nfactor);
 	}
+	public void Add(SV sv)
+	{
+		svDAO.Add(sv);
+	}
 
 }
