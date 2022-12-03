@@ -67,7 +67,6 @@ public class GVDAO
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
 			Statement stmt=con.createStatement();
 			String sql="update gv set name='"+gv.getname()+"', age='"+gv.getage()+"', lesson='"+gv.getlesson()+"' where id='"+gv.getid()+"'";
-			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		}
 		catch (Exception e)
