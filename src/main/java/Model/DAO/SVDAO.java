@@ -3,7 +3,6 @@ package Model.DAO;
 import java.sql.*;
 import java.util.ArrayList;
 
-import Model.BEAN.GV;
 import Model.BEAN.SV;
 
 public class SVDAO 
@@ -103,14 +102,29 @@ public class SVDAO
 			System.out.print(e);
 		}
 	}
-	public void UpdateSV(SV sv)
+	public void UpdateInforSV(SV sv)
 	{
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
 			Statement stmt=con.createStatement();
-			String sql="update sv set id='"+sv.getid()+"', name='"+sv.getname()+"', age='"+sv.getage()+"', idgv='"+sv.getidgv()+"', diem='"+sv.getdiem()+"'";
+			String sql="update sv set name='"+sv.getname()+"', age='"+sv.getage()+"', idgv='"+sv.getidgv()+"' where id='"+sv.getid()+"'";
+			stmt.executeUpdate(sql);
+		}
+		catch (Exception e)
+		{
+			System.out.print(e);
+		}
+	}
+	public void UpdateDiemSV(SV sv)
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="update sv set diem='"+sv.getdiem()+"' where id='"+sv.getid()+"'";
 			stmt.executeUpdate(sql);
 		}
 		catch (Exception e)

@@ -20,4 +20,12 @@ public class GVBO
 	{
 		gvDAO.Add(gv);
 	}
+	public GV SearchGV(String factor,String nFactor)
+	{
+		return gvDAO.SearchGV(factor, nFactor);
+	}
+	public void UpdateGV(GV gv)
+	{
+		gvDAO.UpdateGV(gv);
+	}
 }

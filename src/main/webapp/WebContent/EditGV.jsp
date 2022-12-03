@@ -16,23 +16,23 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" name="ID" id="ID"
-					value="<%=gv.getid()%>"></td>
+				<td><input type="text" name="id" id="id"
+					value="<%=gv.getid()%>" readonly></td>
 			</tr>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="Name" id="Name"
+				<td><input type="text" name="name" id="name"
 					value="<%=gv.getname()%>"></td>
 			</tr>
 
 			<tr>
 				<td>Age</td>
-				<td><input type="text" name="Age" id="Age"
+				<td><input type="text" name="age" id="age"
 					value="<%=gv.getage()%>"></td>
 			</tr>
 			<tr>
 				<td>Lesson</td>
-				<td><input type="text" name="Diem" id="Diem"
+				<td><input type="text" name="lesson" id="lesson"
 					value="<%=gv.getlesson()%>"></td>
 			</tr>
 		</table>
