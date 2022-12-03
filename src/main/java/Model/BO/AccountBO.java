@@ -33,4 +33,8 @@ public class AccountBO
 	{
 		return accountDAO.GetidByUsername(username);
 	}
+	public String GettypeByUsername(String username)
+	{
+		return accountDAO.GettypeByUsername(username);
+	}
 }
