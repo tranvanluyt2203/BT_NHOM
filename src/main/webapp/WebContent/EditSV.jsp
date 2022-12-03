@@ -12,28 +12,28 @@
 	SV sv = (SV) request.getAttribute("sv");
 	%>
 	<h1>Chỉnh sửa thông tin sinh viên</h1>
-	<form action="EditSVDetails" method="post">
+	<form action="EditDetails" method="post">
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type="text" name="ID" id="ID"
-					value="<%=sv.getid()%>"></td>
+				<td><input type="text" name="id" id="ID"
+					value="<%=sv.getid()%>" readonly></td>
 			</tr>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="Name" id="Name"
+				<td><input type="text" name="name" id="Name"
 					value="<%=sv.getname()%>"></td>
 			</tr>
 
 			<tr>
 				<td>Age</td>
-				<td><input type="text" name="Age" id="Age"
+				<td><input type="text" name="age" id="Age"
 					value="<%=sv.getage()%>"></td>
 			</tr>
 			<tr>
 				<td>Diem</td>
-				<td><input type="text" name="Diem" id="Diem"
-					value="<%=sv.getdiem()%>"></td>
+				<td><input type="text" name="diem" id="Diem"
+					value="<%=sv.getdiem() %>" readonly></td>
 			</tr>
 		</table>
 		<input type="submit" name="edit" value="Edit">

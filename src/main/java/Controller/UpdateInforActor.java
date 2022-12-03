@@ -8,10 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import Model.BEAN.GV;
+import Model.BEAN.SV;
 import Model.BO.AccountBO;
 import Model.BO.GVBO;
 import Model.BO.SVBO;
-@WebServlet("/EditGVDetails")
+@WebServlet("/EditDetails")
 public class UpdateInforActor extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
@@ -55,7 +56,21 @@ public class UpdateInforActor extends HttpServlet
 		}
 		else if (type.equals("user"))
 		{
-				
+			RequestDispatcher rd=null;
+			request.setAttribute("sv",svBO.SearchSV("id", accountBO.GetidByUsername(session.getAttribute("username").toString())));
+			if (request.getParameter("edit")!=null)
+			{
+				SV sv=new SV();
+				sv.setid(request.getParameter("id"));
+				sv.setname(request.getParameter("name"));
+				sv.setage(Integer.parseInt(request.getParameter("age").toString()));
+				sv.setidgv(request.getParameter("idgv"));
+				sv.setdiem(Float.parseFloat(request.getParameter("diem")));
+				svBO.UpdateInfor(sv);
+				destination="/WebContent/Welcome.jsp";
+				rd= getServletContext().getRequestDispatcher(destination);
+				rd.forward(request, response);
+			}
 		}
 		
 	}

@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="Model.BEAN.*" %>
 <%@ page import="java.util.List" %>
@@ -12,41 +13,41 @@
 <body>
     <h1>Thông tin các sinh viên</h1>
     <div>Nhấn vào tên sinh viên để thực hiện chỉnh sửa</div>
-    <% int i=1; List<SV> list_sv = (List<SV>) request.getAttribute("ListSV");
-            for(SV sv : list_sv)
+    <form action="ViewListSV" method="post">
+    <%  ArrayList<SV> list_sv = (ArrayList<SV>) request.getAttribute("ListSV");
+            for(int i=0;i<list_sv.size();i++)
             { %>
-            <form action="EditSVDetails" method="post">
                 <div>
                     <h3>
-                        <%=i%>.<%=sv.getname() %>
+                        SV thứ <%=i%> : <%=list_sv.get(i).getname() %>
                     </h3>
                 </div>
                 <table>
                     <tr>
                         <td>ID</td>
                         <td>
-                            <%=sv.getid() %>
+                            <%=list_sv.get(i).getid() %>
                         </td>
                     </tr>
                     <tr>
                         <td>Age</td>
                         <td>
-                            <%=sv.getage() %>
+                            <%=list_sv.get(i).getage() %>
                         </td>
                     </tr>
                     <tr>
                         <td>Diem</td>
                         <td>
-                            <%=sv.getdiem() %>
+                            <%=list_sv.get(i).getdiem() %>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" name="edit" value="Edit">
-                <input type="submit" name="delete" value="Delete">
+                <input type="submit" name="edit<%=i%>" value="Edit">
+                <input type="submit" name="delete<%=i%>" value="Delete">
                 <!-- Click Edit button sẽ có Attribute edit = edit
     			Click Delete button sẽ có Attribute delete = Delete -->
-            </form>
-            <% i++;} %>
+            <% } %>
+             </form>
 
 </body>
 

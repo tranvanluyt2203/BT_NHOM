@@ -73,6 +73,7 @@ public class SVDAO
 			ResultSet rs=stmt.executeQuery(sql);
 			while(rs.next())
 			{
+				sv=new SV();
 				sv.setid(rs.getString(1));
 				sv.setname(rs.getString(2));
 				sv.setage(rs.getInt(3));

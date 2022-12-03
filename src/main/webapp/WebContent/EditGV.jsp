@@ -12,7 +12,7 @@
 	GV gv = (GV) request.getAttribute("gv");
 	%>
 	<h1>Chỉnh sửa thông tin giảng viên</h1>
-	<form action="EditGVDetails" method="post">
+	<form action="EditDetails" method="post">
 		<table>
 			<tr>
 				<td>ID</td>
