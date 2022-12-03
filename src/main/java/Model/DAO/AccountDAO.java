@@ -177,5 +177,19 @@ public class AccountDAO
 		}
 		return type;
 	}
-	
+	public void DelAccount(String id)
+	{
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
+			Statement stmt=con.createStatement();
+			String sql="delete from account where id='"+id+"'";
+			stmt.executeUpdate(sql);
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+	}
 }

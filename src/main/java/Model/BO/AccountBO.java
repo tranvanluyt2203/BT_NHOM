@@ -37,4 +37,8 @@ public class AccountBO
 	{
 		return accountDAO.GettypeByUsername(username);
 	}
+	public void DelAccount(String id)
+	{
+		accountDAO.DelAccount(id);
+	}
 }
