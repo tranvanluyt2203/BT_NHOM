@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Thông tin các giảng viên</h1>
+    <h1>Thông tin giảng viên</h1>
     <% GV gv = (GV) request.getAttribute("gv"); %>
     <div>
         <h3>
@@ -19,13 +19,13 @@
     </div>
     <table>
            <tr>
-               <td>Age</td>
+               <td>Age : </td>
                <td>
                    <%=gv.getage() %>
                </td>
            </tr>
            <tr>
-               <td>Lesson</td>
+               <td>Lesson : </td>
                <td>
                    <%=gv.getlesson() %>
                </td>

@@ -24,26 +24,25 @@
                 </div>
                 <table>
                     <tr>
-                        <td>ID</td>
+                        <td>ID : </td>
                         <td>
                             <%=list_sv.get(i).getid() %>
                         </td>
                     </tr>
                     <tr>
-                        <td>Age</td>
+                        <td>Age : </td>
                         <td>
                             <%=list_sv.get(i).getage() %>
                         </td>
                     </tr>
                     <tr>
-                        <td>Diem</td>
+                        <td>Diem : </td>
                         <td>
                             <%=list_sv.get(i).getdiem() %>
                         </td>
                     </tr>
                 </table>
                 <input type="submit" name="edit<%=i%>" value="Edit">
-                <input type="submit" name="delete<%=i%>" value="Delete">
                 <!-- Click Edit button sẽ có Attribute edit = edit
     			Click Delete button sẽ có Attribute delete = Delete -->
             <% } %>

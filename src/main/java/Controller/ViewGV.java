@@ -31,7 +31,7 @@ public class ViewGV extends HttpServlet
 		GVBO gvBO = new GVBO();
 		SVBO svBO=new SVBO();
 		GV gv=new GV();
-		gv=gvBO.SearchGV("id", svBO.getSV(accountBO.GetidByUsername(session.getAttribute("username").toString())).getid());
+		gv=gvBO.SearchGV("id", svBO.getSV(accountBO.GetidByUsername(session.getAttribute("username").toString())).getidgv());
 		request.setAttribute("gv", gv);
 		destination="/WebContent/ViewGV.jsp";
 		RequestDispatcher rd=getServletContext().getRequestDispatcher(destination);

@@ -33,7 +33,6 @@ public class ViewListSV extends HttpServlet
 		{
 			if(request.getParameter("edit"+i)!=null)
 			{
-				System.out.println("edit"+i+"\n"+listSV.get(i).getdiem());
 				request.setAttribute("diem", listSV.get(i).getdiem());
 				session.setAttribute("id",listSV.get(i).getid());
 				rd=getServletContext().getRequestDispatcher("/WebContent/Changediem.jsp");

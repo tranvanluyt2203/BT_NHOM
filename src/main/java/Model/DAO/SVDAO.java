@@ -110,7 +110,7 @@ public class SVDAO
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bt_nhom","root","");
 			Statement stmt=con.createStatement();
-			String sql="update sv set name='"+sv.getname()+"', age='"+sv.getage()+"', idgv='"+sv.getidgv()+"' where id='"+sv.getid()+"'";
+			String sql="update sv set name='"+sv.getname()+"', age='"+sv.getage()+"' where id='"+sv.getid()+"'";
 			stmt.executeUpdate(sql);
 		}
 		catch (Exception e)

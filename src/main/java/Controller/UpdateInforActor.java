@@ -28,7 +28,6 @@ public class UpdateInforActor extends HttpServlet
 		GVBO gvBO=new GVBO();
 		SVBO svBO=new SVBO();
 		String type=accountBO.GettypeByUsername(session.getAttribute("username").toString());
-		System.out.println(type);
 		if (type.equals("admin"))
 		{
 			RequestDispatcher rd=null;
@@ -42,10 +41,8 @@ public class UpdateInforActor extends HttpServlet
 				gv.setage(Integer.parseInt(request.getParameter("age")));
 				gv.setlesson(request.getParameter("lesson"));
 				gvBO.UpdateGV(gv);
-				System.out.println("\n"+request.getParameter("edit")+gv.getage());
 				destination="/WebContent/Welcome.jsp";
 				rd= getServletContext().getRequestDispatcher(destination);
-				rd.forward(request, response);
 			}
 			else 
 			{
@@ -64,13 +61,17 @@ public class UpdateInforActor extends HttpServlet
 				sv.setid(request.getParameter("id"));
 				sv.setname(request.getParameter("name"));
 				sv.setage(Integer.parseInt(request.getParameter("age").toString()));
-				sv.setidgv(request.getParameter("idgv"));
 				sv.setdiem(Float.parseFloat(request.getParameter("diem")));
 				svBO.UpdateInfor(sv);
 				destination="/WebContent/Welcome.jsp";
 				rd= getServletContext().getRequestDispatcher(destination);
-				rd.forward(request, response);
 			}
+			else 
+			{
+				destination="/WebContent/EditSV.jsp";
+				rd= getServletContext().getRequestDispatcher(destination);
+			}
+			rd.forward(request, response);
 		}
 		
 	}
