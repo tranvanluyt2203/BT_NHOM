@@ -10,42 +10,35 @@
 </head>
 
 <body>
-    <h1>Thông tin các sinh viên</h1>
-    <div>Nhấn vào tên sinh viên để thực hiện chỉnh sửa</div>
-    <% int i=1; List<SV> list_sv = (List<SV>) request.getAttribute("ListSV");
-            for(SV sv : list_sv)
+    <h1>Thông tin các giảng viên</h1>
+    <% int i=1; List<GV> list_gv = (List<GV>) request.getAttribute("ListGV");
+            for(GV gv : list_gv)
             { %>
-            <form action="EditSVDetails" method="post">
                 <div>
                     <h3>
-                        <%=i%>.<%=sv.getname() %>
+                        <%=i%>.<%=gv.getname() %>
                     </h3>
                 </div>
                 <table>
                     <tr>
                         <td>ID</td>
                         <td>
-                            <%=sv.getid() %>
+                            <%=gv.getid() %>
                         </td>
                     </tr>
                     <tr>
                         <td>Age</td>
                         <td>
-                            <%=sv.getage() %>
+                            <%=gv.getage() %>
                         </td>
                     </tr>
                     <tr>
-                        <td>Diem</td>
+                        <td>Lesson</td>
                         <td>
-                            <%=sv.getdiem() %>
+                            <%=gv.getlesson() %>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" name="edit" value="Edit">
-                <input type="submit" name="delete" value="Delete">
-                <!-- Click Edit button sẽ có Attribute edit = edit
-    			Click Delete button sẽ có Attribute delete = Delete -->
-            </form>
             <% i++;} %>
 
 </body>
